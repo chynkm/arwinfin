@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta
+            name="author"
+            content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+            />
+        <meta name="generator" content="Astro v5.13.2" />
+        <title>ARWIN Fin Guide</title>
+        <link
+            rel="canonical"
+            href="https://getbootstrap.com/docs/5.3/examples/jumbotron/"
+            />
+        <script src="assets/js/color-modes.js"></script>
+        <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <meta name="theme-color" content="#712cf9" />
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .b-example-divider {
+                width: 100%;
+                height: 3rem;
+                background-color: #0000001a;
+                border: solid rgba(0, 0, 0, 0.15);
+                border-width: 1px 0;
+                box-shadow:
+                    inset 0 0.5em 1.5em #0000001a,
+                    inset 0 0.125em 0.5em #00000026;
+            }
+
+            .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+            }
+
+            .bi {
+                vertical-align: -0.125em;
+                fill: currentColor;
+            }
+
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+            }
+
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .btn-bd-primary {
+                --bd-violet-bg: #712cf9;
+                --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+                --bs-btn-font-weight: 600;
+                --bs-btn-color: var(--bs-white);
+                --bs-btn-bg: var(--bd-violet-bg);
+                --bs-btn-border-color: var(--bd-violet-bg);
+                --bs-btn-hover-color: var(--bs-white);
+                --bs-btn-hover-bg: #6528e0;
+                --bs-btn-hover-border-color: #6528e0;
+                --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+                --bs-btn-active-color: var(--bs-btn-hover-color);
+                --bs-btn-active-bg: #5a23c8;
+                --bs-btn-active-border-color: #5a23c8;
+            }
+
+            .bd-mode-toggle {
+                z-index: 1500;
+            }
+
+            .bd-mode-toggle .bi {
+                width: 1em;
+                height: 1em;
+            }
+
+            .bd-mode-toggle .dropdown-menu .active .bi {
+                display: block !important;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="check2" viewBox="0 0 16 16">
+                <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+                    ></path>
+            </symbol>
+            <symbol id="circle-half" viewBox="0 0 16 16">
+                <path
+                    d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                    ></path>
+            </symbol>
+            <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                <path
+                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+                    ></path>
+                <path
+                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+                    ></path>
+            </symbol>
+            <symbol id="sun-fill" viewBox="0 0 16 16">
+                <path
+                    d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                    ></path>
+            </symbol>
+        </svg> -->
+        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+            <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+                    <use href="#circle-half"></use>
+                </svg>
+                <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+                <li>
+                    <button
+                        type="button"
+                        class="dropdown-item d-flex align-items-center"
+                        data-bs-theme-value="light"
+                        aria-pressed="false"
+                        >
+                        <svg class="bi me-2 opacity-50" aria-hidden="true">
+                            <use href="#sun-fill"></use>
+                        </svg>
+                        Light
+                        <svg class="bi ms-auto d-none" aria-hidden="true">
+                            <use href="#check2"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        type="button"
+                        class="dropdown-item d-flex align-items-center"
+                        data-bs-theme-value="dark"
+                        aria-pressed="false"
+                        >
+                        <svg class="bi me-2 opacity-50" aria-hidden="true">
+                            <use href="#moon-stars-fill"></use>
+                        </svg>
+                        Dark
+                        <svg class="bi ms-auto d-none" aria-hidden="true">
+                            <use href="#check2"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        type="button"
+                        class="dropdown-item d-flex align-items-center active"
+                        data-bs-theme-value="auto"
+                        aria-pressed="true"
+                        >
+                        <svg class="bi me-2 opacity-50" aria-hidden="true">
+                            <use href="#circle-half"></use>
+                        </svg>
+                        Auto
+                        <svg class="bi ms-auto d-none" aria-hidden="true">
+                            <use href="#check2"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <div class="container py-4">
+                <header class="pb-3 mb-4 border-bottom">
+                    <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="32"
+                            class="me-2"
+                            viewBox="0 0 118 94"
+                            role="img"
+                            >
+                            <title>Bootstrap</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path>
+                        </svg>
+                        <span class="fs-4">Jumbotron example</span>
+                    </a>
+                </header>
+                <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">PERSONAL LOAN</h1>
+                        <p class="col-md-8 fs-4">
+                            A personal loan is an unsecured form of credit, meaning you don't need to pledge any collateral such as a car or property. This gives borrowers more flexibility, since the loan can be used for a wide range of purposes—such as consolidating debt, covering medical expenses, financing a major purchase, or paying for travel.
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="personal_loan">Documents required to apply for Personal Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Personal Loan" href="#personal_loan"></a></h2>
+                            <ul>
+                                <li>Identity Proof  - Passport, Voter's ID, Driving License, PAN Card, Aadhaar Card</li>
+                                <li>Proof of Residence or Address Proof - Passport, Voter’s ID, Driving License, PAN Card, Aadhaar Card, Electricity Bill, Telephone Bill, Ration Card</li>
+                                <li>Age Proof -  Passport, Voter’s ID, Driving License, PAN Card, Aadhaar Card</li>
+                                <li>Income Proof - 1 year Bank statement, 3 months Salary Slips</li>
+                                <li>Employment Proof - Employment Certificate, Office address proof</li>
+                                <li>GST or VAT Registration for Self-employed</li>
+                                <li>Photograph - Passport-size photographs</li>
+                                <li>Business proof - Business registration documents such as a partnership deed, Memorandum of Association (MOA), Articles of Association (AOA), etc.</li>
+                                <li>Income tax returns – Documents of the past 2-3 years to verify income and tax payment history</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">HOME LOAN</h1>
+                        <p class="col-md-8 fs-4">
+                            Numerous trusted institutions offer attractive home loan rates and affordable EMIs, making homeownership more accessible than ever.
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="home_loan">Documents required to apply for Home Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Home Loan" href="#home_loan"></a></h2>
+                            <h3>If you are a salaried individual:</h3>
+                            <ul>
+                                <li>Form 16</li>
+                                <li>Employee Identity Card</li>
+                                <li>3 Months Salary Slip</li>
+                                <li>6 Month Bank Account Statement</li>
+                                <li>Duration of Employment Evidence</li>
+                            </ul>
+
+                            <h3>If you are self-employed individuals:</h3>
+                            <ul>
+                                <li>PAN</li>
+                                <li>Trade License</li>
+                                <li>Partnership Deed</li>
+                                <li>Article of Association</li>
+                                <li>Memorandum of Association</li>
+                                <li>Import Export Code</li>
+                                <li>SEBI Registration Certificate</li>
+                                <li>ROC Registration Certificate</li>
+                                <li>Financial Statement Audited by CA</li>
+                                <li>Profit & Loss Account Statement</li>
+                                <li>Balance Sheet</li>
+                                <li>6 Months Bank Account Statement</li>
+                                <li>Professional Practice License for Doctors, Consultants, etc.</li>
+                                <li>Registration Certificate of Establishment for Shops, Factories, and Other Establishments</li>
+                                <li>Business Address Proof</li>
+                            </ul>
+
+                            <h3>If you are a Non-Resident Indians (NRIs):</h3>
+                            <ul>
+                                <li>Income Proof Documents for NRI</li>
+                                <li>Property Papers</li>
+                                <li>Property Documents</li>
+                                <li>Sale Deed</li>
+                                <li>Stamped Agreement of Sale</li>
+                                <li>Allotment Letter</li>
+                                <li>No Objection Certificate or NOC</li>
+                                <li>Housing Society</li>
+                                <li>Builder</li>
+                                <li>Possession Certificate</li>
+                                <li>Land Tax Receipt</li>
+                                <li>Construction Cost Estimate</li>
+                                <li>Bank Account Statement of Payment Made to Seller or Builder</li>
+                                <li>Payment Receipt of Payment Made to Seller or Builder</li>
+                                <li>Incase of resale property share certificate is required</li>
+                                <li>Occupancy Certificate</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">BUSINESS LOAN</h1>
+                        <p class="col-md-8 fs-4">
+                            Most lenders extend financing to various business structures, such as sole proprietorships, partnerships, limited liability companies (LLCs), corporations, and others.
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="business_loan">Documents required to apply for Business Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Business Loan" href="#business_loan"></a></h2>
+                            <ul>
+                                <li>ITR for the past 2-3 years</li>
+                                <li>Current Bank Account Statement for the last 12 months</li>
+                                <li>Photocopy of PAN Card</li>
+                                <li>Address Proof for Residence such as Voter Card, Passport, Aadhaar Card, Telephone Bill, Electricity Bill</li>
+                                <li>Address proof for Business such as the Telephone Bill or Electricity Bill</li>
+                                <li>Last Financial Year's provisional Financials and future year's projections</li>
+                                <li>Company's business profile on the letterhead</li>
+                                <li>2 photographs of promoters and property owners.</li>
+                                <li>Sanction letter and Repayment schedule of existing loan</li>
+                                <li>GST registration certificate and GST returns of latest 2 years</li>
+                                <li>D-Vat/Sale tax registration copy</li>
+                                <li>Udhayam Aadhaar registration certificate</li>
+                                <li>Rent agreement copy of factory and residence (if property is rented)</li>
+                                <li>Business Continuity proof of 3 years (3 years old ITR/Company registration etc.)</li>
+                                <li>Company PAN Card, Certificate of Incorporation, MOA, AOA, List of Directors, and Shareholding pattern for Pvt Ltd companies</li>
+                                <li>Partnership Deed, Company pan Card for Partnership Companies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">LOAN AGAINST PROPERTY</h1>
+                        <p class="col-md-8 fs-4">
+                            A Loan Against Property (LAP) is essentially a type of mortgage loan, as you are required to mortgage your property to safeguard the lender against the risk of non-payment or default. Before approving the loan, the lender evaluates your personal and financial profile, including factors such as nationality, age, occupation, income, and the market value of the property being offered as collateral. A mortgage loan calculator then helps estimate the financial implications of the loan by assessing key eligibility parameters, assisting both the borrower and lender in determining the feasibility of approval.
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="loan_against_property_loan">Documents required to apply for Loan Against Property<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Loan Against Property" href="#loan_against_property_loan"></a></h2>
+                            <ul>
+                                <li>Required to Apply for Loan Against Property</li>
+                                <li>Proof of identity/residence</li>
+                                <li>Proof of income</li>
+                                <li>Property-related documents</li>
+                                <li>Proof of Business (for self-employed)</li>
+                                <li>Account statement for the last 6 months</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">USED CAR LOAN</h1>
+                        <p class="col-md-8 fs-4">
+                            We offer financing for your used car purchase, with flexible repayment options including affordable monthly installments or an OD facility.
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="used_car_loan">Documents required to apply for Used Car Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Used Car Loan" href="#used_car_loan"></a></h2>
+                            <ul>
+                                <li>KYC documents (Valid Photo ID Proofs)</li>
+                                <li>PAN Card</li>
+                                <li>Last 2 years ITR as proof of income</li>
+                                <li>Salary Slip (latest 3 months)</li>
+                                <li>Salary account statement (latest 6 months)</li>
+                                <li>Signature Verification Proof</li>
+                                <li>Registration Certificate of the Car</li>
+                                <li>Car Insurance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">NEW CAR LOAN</h1>
+                        <p class="col-md-8 fs-4">
+                            Drive home your dream new car today! Get up to 100% financing on the on-road cost—no need to wait until you’ve saved it all.
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="new_car_loan">Documents required to apply for New Car Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for New Car Loan" href="#new_car_loan"></a></h2>
+                            <ul>
+                                <li>Signature Verification Proof</li>
+                                <li>Proforma Invoice of the Car</li>
+                                <li>KYC documents (Valid Photo ID Proofs)</li>
+                                <li>PAN Card</li>
+                                <li>Last 2 years ITR as proof of income</li>
+                                <li>Salary Slip (latest 3 months)</li>
+                                <li>Salary account statement (latest 6 months)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">PROJECT LOAN</h1>
+                        <p class="col-md-8 fs-4">
+                            A project loan is a type of financing provided specifically to fund a clearly defined project—such as construction, infrastructure, business expansion, renewable energy plants, manufacturing units, or large equipment purchases. Unlike general business loans, the loan is evaluated and repaid based on the project’s ability to generate cash flow, not just the borrower’s existing financial strength
+                        </p>
+
+                        <div class="bd-content ps-lg-2">
+                            <h2 id="project_loan">Documents required to apply for Project Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Project Loan" href="#project_loan"></a></h2>
+
+
+                            <h3>Initial Project Documents:</h3>
+                            <ul>
+                                <li>Business Plan: Outlines the project's objectives, strategies, and expected outcomes</li>
+                                <li>Financial Models: Detailed projections of revenue, expenses, and cash flow to demonstrate the project's viability</li>
+                                <li>Market Feasibility Study: Analysis of market conditions to support the project's potential success</li>
+                                <li>Financial Feasibility Study: Assessment of the financial aspects to ensure the project can be funded and sustained</li>
+                            </ul>
+
+                            <h3>Legal Documents:</h3>
+                            <ul>
+                                <li>Engineering, Procurement, and Construction (EPC) Contracts: Agreements that outline the responsibilities of contractors and the terms of construction</li>
+                                <li>Loan Agreements: Legal contracts that specify the terms and conditions of the loan, including repayment schedules and interest rates</li>
+                                <li>Partnership Agreements: If applicable, documents that outline the roles and responsibilities of partners involved in the project</li>
+                            </ul>
+
+                            <h3>Construction-Related Documents:</h3>
+                            <ul>
+                                <li>Construction Timeline: A detailed schedule outlining the phases of construction and key milestones</li>
+                                <li>Blueprints/Plans: Architectural designs and plans for the project, often required for permits and approvals</li>
+                                <li>Proof of the contractor's qualifications and legal ability to perform the work</li>
+                            </ul>
+
+                            <h3>Financial Statements:</h3>
+                            <ul>
+                                <li>A summary of personal assets and liabilities, often required for individual borrowers</li>
+                                <li>Tax Returns: Previous years' tax returns to verify income and financial stability</li>
+                                <li>Proof of Insurance: Documentation showing that the project is insured against potential risks</li>
+                            </ul>
+
+                            <h3>Additional Documentation:</h3>
+                            <ul>
+                                <li>Authorization to Obtain Credit Information: Permission for lenders to check the borrower's credit history</li>
+                                <li>Estimate of Construction Costs: Detailed breakdown of expected costs associated with the project</li>
+                                <li>Zoning and Permitting Documents: Proof that the project complies with local zoning laws and has obtained necessary permits</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <footer class="pt-3 mt-4 text-body-secondary border-top">
+                    &copy; 2025
+                </footer>
+            </div>
+        </main>
+        <script
+            src="assets/dist/js/bootstrap.bundle.min.js"
+            class="astro-vvvwv3sm"
+            ></script>
+    </body>
+</html>
