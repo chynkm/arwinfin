@@ -94,6 +94,31 @@
             .bd-mode-toggle .dropdown-menu .active .bi {
                 display: block !important;
             }
+
+            /* Basic styling for anchor tag */
+            .anchor-link {
+              position: relative;
+              color: var(--bs-link-color, #0d6efd);
+              text-decoration: none;
+              padding-right: 1rem; /* space reserved for the # */
+              padding-left: 0.5em;
+            }
+
+            /* The hash is ALWAYS there, but invisible */
+            .anchor-link::after {
+              content: "#";
+              position: absolute;
+              right: 0;
+              top: 0;
+              opacity: 0;               /* hidden but still takes up space */
+              transition: opacity .2s ease-in-out;
+              color: var(--bs-link-color, #0d6efd);
+            }
+
+            /* On hover: reveal smoothly */
+            .anchor-link:hover::after {
+              opacity: 1;
+            }
         </style>
     </head>
     <body>
@@ -170,18 +195,24 @@
                             <title>Bootstrap</title>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path>
                         </svg>
-                        <span class="fs-4">Jumbotron example</span>
+                        <span class="fs-4">ARWIN FIN GUIDE</span>
                     </a>
                 </header>
                 <div class="p-1">
                     <div class="container-fluid py-2">
-                        <h1 class="display-5 fw-bold">PERSONAL LOAN</h1>
+                        <h1 class="display-5 fw-bold">
+                            PERSONAL LOAN
+                            <a class="anchor-link" lass="link-opacity-100" aria-label="Link to this section: Personal Loan" href="#personal-loan"></a>
+                        </h1>
                         <p class="fs-4">
                             A personal loan is an unsecured form of credit, meaning you don't need to pledge any collateral such as a car or property. This gives borrowers more flexibility, since the loan can be used for a wide range of purposes—such as consolidating debt, covering medical expenses, financing a major purchase, or paying for travel.
                         </p>
 
                         <div class="bd-content">
-                            <h2 id="personal_loan">Documents required to apply for Personal Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Personal Loan" href="#personal_loan"></a></h2>
+                            <h2 id="documents-for-personal-loan">
+                                Documents required to apply for Personal Loan
+                                <a class="anchor-link" lass="link-opacity-100" aria-label="Link to this section: Documents required to apply for Personal Loan" href="#documents-for-personal-loan"></a>
+                            </h2>
                             <ul>
                                 <li>Identity Proof  - Passport, Voter's ID, Driving License, PAN Card, Aadhaar Card</li>
                                 <li>Proof of Residence or Address Proof - Passport, Voter’s ID, Driving License, PAN Card, Aadhaar Card, Electricity Bill, Telephone Bill, Ration Card</li>
@@ -204,7 +235,7 @@
 
                         <div class="bd-content">
                             <h2 id="home_loan">Documents required to apply for Home Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Home Loan" href="#home_loan"></a></h2>
-                            <h3>If you are a salaried individual:</h3>
+                            <h4>Salaried individual:</h4>
                             <ul>
                                 <li>Form 16</li>
                                 <li>Employee Identity Card</li>
@@ -213,7 +244,7 @@
                                 <li>Duration of Employment Evidence</li>
                             </ul>
 
-                            <h3>If you are self-employed individuals:</h3>
+                            <h4>Self-employed individuals:</h4>
                             <ul>
                                 <li>PAN</li>
                                 <li>Trade License</li>
@@ -232,7 +263,7 @@
                                 <li>Business Address Proof</li>
                             </ul>
 
-                            <h3>If you are a Non-Resident Indians (NRIs):</h3>
+                            <h4>Non-Resident Indians(NRI):</h4>
                             <ul>
                                 <li>Income Proof Documents for NRI</li>
                                 <li>Property Papers</li>
@@ -351,7 +382,6 @@
 
                         <div class="bd-content">
                             <h2 id="project_loan">Documents required to apply for Project Loan<a class="anchor-link" aria-label="Link to this section: Documents required to apply for Project Loan" href="#project_loan"></a></h2>
-
 
                             <h3>Initial Project Documents:</h3>
                             <ul>
